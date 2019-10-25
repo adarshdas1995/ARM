@@ -1,0 +1,13 @@
+     AREA     factorial, CODE, READONLY
+     EXPORT __main
+     ENTRY 
+__main  FUNCTION	
+     
+	          MOV r0 , #10 ; here number is stored in ro = 10
+	          TST r0, #1 ; performing bitwise and operation without changing the value of r0
+	          IT NE       ; check if zero flag is not set
+                  MOVNE r1,#1 ; if zero flag not set means value is odd so move one in r1
+		  MOVEQ r2,#1 ; if even move 1 in r2
+STOP    B STOP ; stop program
+     ENDFUNC
+     END 

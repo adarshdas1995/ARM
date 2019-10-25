@@ -1,0 +1,27 @@
+     AREA     first, CODE, READONLY
+     EXPORT __main
+     ENTRY 
+__main  FUNCTION	
+              MOV r0 , #15     ;a=15	
+	      MOV r1 , #20    ;b=20
+	
+              ; if any one input is zero then ouput of gcd(a,b) will be the non-zero input as everything divides 0	  
+	      CMP r0,#0  
+	      IT EQ
+	      BEQ STOP   ; output is stored in r1
+			  
+	      CMP r1,#0 
+	      IT EQ
+	      BEQ STOP  ; output is stored in r0
+			  
+LOOP	      CMP r0 , r1 ;compare a and b
+              IT EQ       ; check if a = b
+              BEQ STOP	   ; if a =b then brach to stop
+              ITE HI	   ; check if  a > b	  
+	      SUBHI r0 , r0 , r1 ; if a > b , apply gcd(a-b) and loop again
+              SUBLS r1 , r1 , r0 ; if a < b , apply gcd(b-a) and loop again
+			  ; output stored in both ro and r1 after computation
+              B LOOP	           
+STOP    B STOP ; stop program
+     ENDFUNC
+     END 

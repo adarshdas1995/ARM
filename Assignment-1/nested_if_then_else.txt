@@ -1,0 +1,21 @@
+     AREA     factorial, CODE, READONLY
+     EXPORT __main
+     ENTRY 
+__main  FUNCTION
+	          ; this program checks if the given value is greater than 1 but less than 5 
+			  ; if valuema is 1<a<5 then make r1 value 1 ,if a>5 r2 set to 1 and if a<1 r3 set to 1
+	                  MOV r0 , #4  ; input number stored in r0  
+			  CMP r0 , #1  ; check if r0 > 1
+			  ITTE HI      ;  r0 > 1
+			  CMPHI r0,#5  ; if r0 > 1 check if it is less than 5
+			  ITE LS       ; if less than 5
+			  MOVLS r1,#1  ; if less than 5 set r1 1
+			  MOVHI r2,#1 ; if greater than 5 set r2 1
+			  MOVLS r3,#1  ; if less than 1 set r3 1
+			  ; I guess nested if then else will not work  because it is showing 'first.s(11): error: A1603E: This instruction inside IT block has UNPREDICTABLE results'
+			  
+	          
+
+STOP    B STOP ; stop program
+     ENDFUNC
+     END 

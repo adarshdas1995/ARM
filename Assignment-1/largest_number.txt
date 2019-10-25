@@ -1,0 +1,18 @@
+     AREA     first, CODE, READONLY
+     EXPORT __main
+     ENTRY 
+__main  FUNCTION	
+	       
+             MOV r0 , #7   ; store first number in r0
+	     MOV r1 , #14   ; store second number in r1  
+             MOV r2 , #15  ; store third number in r2   			  
+             CMP r0 , r1      ; Compare  r0 and r1
+             IT HI            ; check if ro > r1
+             MOVHI r1 , r0    ; if r0>r1 move larger number among both in r1
+	     CMP r1 , r2      ; Compare r1 and r2
+	     IT HI             ; check if r1 > r2
+	     MOVHI r2 , r1     ; if r1 > r2 move larger number among both in r1
+	     MOV r3 , r2       ; output is in r3
+STOP    B STOP ; stop program
+     ENDFUNC
+     END 
