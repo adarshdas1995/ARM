@@ -1,18 +1,4 @@
-;i=1 
-;product_sin=x 
-;result_sin =x 
-;
-;result_cos =1 
-;product_cos=1 
-;x=s5
-;loop
-;
-;product_sin =  -1 * product_sin * x* x  / (2*i) (2*i+1)
-;result_sin=result_sin+product_sin
-;
-;product_cos = -1 * product_cos * x* x */ (2*i) (2*i-1)
-;result_cos=result_cos +product_cos
-;tan = s2/s4
+
      THUMB
 	  AREA     test, CODE, READONLY
 	  IMPORT printMsg
