@@ -1,4 +1,5 @@
  ;logic gate implementation using neural network
+ ;
  
 ;start of program
  PRESERVE8
