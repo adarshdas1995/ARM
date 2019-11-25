@@ -119,6 +119,3 @@ OUTPUT	VLDR.F32 S15 ,=0.5 ; thresholding to determine if logic 1 or logic 0
 stop B stop ; stop program
 	 ENDFUNC
 	 END
-		 ;Note: please note that the actual python program was trained on only 4 input combinations out of 6.
-		 ;so, output will be correct for only those inputs because our neural network gives loss for unseen data
-		 ; this means that the model lacks generalization
